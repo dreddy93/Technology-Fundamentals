@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1._1_P03_Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int goupOfPeople = int.Parse(Console.ReadLine());
+            string typeOfGroup = Console.ReadLine();
+            string dayOfTheWeek = Console.ReadLine();
+
+            double priceForTheGroup = 0;
+            switch (typeOfGroup)
+            {
+                case "Students":
+                    switch (dayOfTheWeek)
+                    {
+                        case "Friday": priceForTheGroup = goupOfPeople * 8.45; break;
+                        case "Saturday": priceForTheGroup = goupOfPeople * 9.8; break;
+                        case "Sunday": priceForTheGroup = goupOfPeople * 10.46; break;
+                    }
+                    break;
+                case "Business":
+                    switch (dayOfTheWeek)
+                    {
+                        case "Friday": priceForTheGroup = goupOfPeople * 10.95; break;
+                        case "Saturday": priceForTheGroup = goupOfPeople * 15.6; break;
+                        case "Sunday": priceForTheGroup = goupOfPeople * 16; break;
+                    }
+                    break;
+                case "Regular":
+                    switch (dayOfTheWeek)
+                    {
+                        case "Friday": priceForTheGroup = goupOfPeople * 15; break;
+                        case "Saturday": priceForTheGroup = goupOfPeople * 20; break;
+                        case "Sunday": priceForTheGroup = goupOfPeople * 22.50; break;
+                    }
+                    break;
+            }
+            if (typeOfGroup == "Students" && goupOfPeople >= 30)
+            {
+                priceForTheGroup *= 0.85;
+            }
+            else if (typeOfGroup == "Business" && goupOfPeople >= 100)
+            {
+                if (dayOfTheWeek == "Friday")
+                {
+                    priceForTheGroup -= 10.95 * 10;
+                }
+                else if (dayOfTheWeek == "Saturday")
+                {
+                    priceForTheGroup -= 15.6 * 10;
+                }
+                else if (dayOfTheWeek == "Sunday")
+                {
+                    priceForTheGroup -= 16 * 10;
+                }
+            }
+            else if (typeOfGroup == "Regular" && (goupOfPeople >= 10 && goupOfPeople <= 20))
+            {
+                priceForTheGroup *= 0.95;
+            }
+            Console.WriteLine($"Total price: {priceForTheGroup:f2}");
+        }
+    }
+}
