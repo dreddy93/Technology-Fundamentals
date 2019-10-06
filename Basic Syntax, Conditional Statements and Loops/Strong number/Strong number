@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1._1_P06_Strong_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            
+            int numberNeed = number;
+            
+            int sumOfNumbers = 0;
+            while (number > 0)
+            {
+                int lastDigit = number % 10;
+                int factorialNumber = 1;
+                for (int i = 1; i <= lastDigit; i++)
+                {
+                    factorialNumber *= i;
+                }
+                sumOfNumbers += factorialNumber;
+                number /= 10;
+            }
+            if (numberNeed == sumOfNumbers)
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+        }
+    }
+}
