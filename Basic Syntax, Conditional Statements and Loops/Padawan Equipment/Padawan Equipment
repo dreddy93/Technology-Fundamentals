@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1._1_P07_Vending_machine
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double amountOfMoney = double.Parse(Console.ReadLine());
+            int countOfStudents = int.Parse(Console.ReadLine());
+            double priceForOneLightsaber = double.Parse(Console.ReadLine());
+            double priceForOneRobe = double.Parse(Console.ReadLine());
+            double priceForOneBelt = double.Parse(Console.ReadLine());
+
+            double priceLightsabers = priceForOneLightsaber * Math.Ceiling(countOfStudents + (countOfStudents * 0.1));
+            double priceRobes = priceForOneRobe * countOfStudents;
+            double freeBelts = countOfStudents / 6;
+            double priceBelts = priceForOneBelt * (countOfStudents - freeBelts);
+            double sumMoney = priceLightsabers + priceRobes + priceBelts;
+
+            if (sumMoney > amountOfMoney)
+            {
+                Console.WriteLine($"Ivan Cho will need {sumMoney - amountOfMoney:f2}lv more.");
+            }
+            else
+            {
+                Console.WriteLine($"The money is enough - it would cost {sumMoney:f2}lv.");
+            }
+        }
+    }
+}
