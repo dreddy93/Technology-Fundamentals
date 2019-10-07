@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _1._1_P07_Vending_machine
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string inserdedMoney = Console.ReadLine();
+            double sumMoney = 0;
+
+            while (inserdedMoney != "Start")
+            {
+                double money = double.Parse(inserdedMoney);
+                switch (money)
+                {
+                    case 0.1: sumMoney += money; break;
+                    case 0.2: sumMoney += money; break;
+                    case 0.5: sumMoney += money; break;
+                    case 1: sumMoney += money; break;
+                    case 2: sumMoney += money; break;
+                    default: Console.WriteLine($"Cannot accept {money}"); break;
+                }
+                inserdedMoney = Console.ReadLine();
+            }
+            string products = Console.ReadLine();
+
+            while (products != "End")
+            {
+                bool needMoney = true;
+                switch (products)
+                {
+                    case "Nuts":
+                        if (sumMoney >= 2.0)
+                        {
+                            sumMoney -= 2.0;
+                            Console.WriteLine($"Purchased {products.ToLower()}");
+                            needMoney = false;
+                        }
+                        break;
+                    case "Water":
+                        if (sumMoney >= 0.7)
+                        {
+                            sumMoney -= 0.7;
+                            Console.WriteLine($"Purchased {products.ToLower()}");
+                            needMoney = false;
+                        }
+                        break;
+                    case "Crisps":
+                        if (sumMoney >= 1.5)
+                        {
+                            sumMoney -= 1.5;
+                            Console.WriteLine($"Purchased {products.ToLower()}");
+                            needMoney = false;
+                        }
+                        break;
+                    case "Soda":
+                        if (sumMoney >= 0.8)
+                        {
+                            sumMoney -= 0.8;
+                            Console.WriteLine($"Purchased {products.ToLower()}");
+                            needMoney = false;
+                        }
+                        break;
+                    case "Coke":
+                        if (sumMoney >= 1.0)
+                        {
+                            sumMoney -= 1.0;
+                            Console.WriteLine($"Purchased {products.ToLower()}");
+                            needMoney = false;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Invalid product");
+                        needMoney = false;
+                        break;
+                }
+                if (needMoney)
+                {
+                    Console.WriteLine("Sorry, not enough money");
+                }
+                products = Console.ReadLine();
+            }
+            Console.WriteLine($"Change: {sumMoney:f2}");
+        }
+    }
+}
