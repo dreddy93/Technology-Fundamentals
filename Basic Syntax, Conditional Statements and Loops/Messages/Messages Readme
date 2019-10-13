@@ -1,0 +1,41 @@
+Write a program, which emulates typing an SMS, following this guide:
+1	
+2  abc	
+3  def
+4  ghi
+5  jkl
+6  mno
+7  pqrs
+8  tuv
+9  wxyz
+0  space	
+Following the guide, 2 becomes “a”, 22 becomes “b” and so on.
+Examples
+Input	         Output		
+5
+44
+33
+555
+555
+666	
+               hello
+9
+44
+33
+999
+0
+8
+44
+33
+777
+33	            
+                hey there		
+7
+6
+33
+33
+8
+0
+6
+33	
+                meet me
