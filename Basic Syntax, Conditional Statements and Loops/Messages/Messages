@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int rows = int.Parse(Console.ReadLine());
+            string massege = string.Empty;
+            for (int i = 0; i < rows; i++)
+            {
+                int nums = int.Parse(Console.ReadLine());
+                int numberOfDigit = nums.ToString().Length;
+                int mainDigit = nums % 10;
+                int offset = (mainDigit - 2) * 3;
+                if (mainDigit == 8 || mainDigit == 9)
+                {
+                    offset++;
+                }
+                int leterIndex = (offset + numberOfDigit - 1);
+                if (mainDigit == 0)
+                {
+                    massege += " ";
+                }
+                else
+                {
+                    char ch = Convert.ToChar(leterIndex + 97);
+                    massege += ch;
+                }
+            }
+            Console.WriteLine(massege);
+        }
+    }
+}
