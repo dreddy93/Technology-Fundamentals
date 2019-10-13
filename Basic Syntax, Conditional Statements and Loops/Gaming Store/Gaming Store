@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double balance = double.Parse(Console.ReadLine());
+            double money = balance;
+            string nameOfTheGame = Console.ReadLine();
+            double sum = 0;
+            while (nameOfTheGame != "Game Time")
+            {
+                if (balance > 0)
+                {
+                    switch (nameOfTheGame)
+                    {
+                        case "OutFall 4":
+                            if (balance >= 39.99)
+                            {
+                                balance -= 39.99;
+                                sum += 39.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        case "CS: OG":
+                            if (balance >= 15.99)
+                            {
+                                balance -= 15.99;
+                                sum += 15.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        case "Zplinter Zell":
+                            if (balance >= 19.99)
+                            {
+                                balance -= 19.99;
+                                sum += 19.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        case "Honored 2":
+                            if (balance >= 59.99)
+                            {
+                                balance -= 59.99;
+                                sum += 59.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        case "RoverWatch":
+                            if (balance >= 29.99)
+                            {
+                                balance -= 29.99;
+                                sum += 29.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        case "RoverWatch Origins Edition":
+                            if (balance >= 39.99)
+                            {
+                                balance -= 39.99;
+                                sum += 39.99;
+                                Console.WriteLine($"Bought {nameOfTheGame}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Too Expensive");
+                            }
+                            break;
+                        default: Console.WriteLine("Not Found"); break;
+
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Out of money!");
+                    continue;
+                }
+                nameOfTheGame = Console.ReadLine();
+            }
+            if (balance > 0)
+            {
+                Console.WriteLine($"Total spent: ${sum:f2}. Remaining: ${money - sum:f2}");
+            }
+            else
+            {
+                Console.WriteLine("Out of money!");
+            }
+        }
+    }
+}
