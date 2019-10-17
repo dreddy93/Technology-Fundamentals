@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            char thirdChar =  char.Parse(Console.ReadLine());
+
+            if (char.IsLower(thirdChar))
+            {
+                Console.WriteLine("lower-case");
+            }
+            else
+            {
+                Console.WriteLine("upper-case");
+            }
+        }
+    }
+}
