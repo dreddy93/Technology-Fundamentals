@@ -1,0 +1,13 @@
+Calculate how many courses will be needed to elevate n persons by using an elevator of capacity of p persons. 
+The input holds two lines: the number of people n and the capacity p of the elevator.
+Examples
+Input	                Output	
+17
+3	
+                      6	
+4
+5	
+                      1	
+10
+5	
+                      2
