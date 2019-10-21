@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+
+            for (char i = 'a'; i < 97 + number; i++)
+            {
+                for (char y = 'a'; y < 97 + number; y++)
+                {
+                    for (char x = 'a'; x < 97 + number; x++)
+                    {
+                        Console.WriteLine($"{i}{y}{x}");
+                    }
+                }
+            }
+        }
+    }
+}
