@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._1_P10_Poke_mon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+            int M = int.Parse(Console.ReadLine());
+            int Y = int.Parse(Console.ReadLine());
+
+            int firstN = N;
+            int counter = 0;
+            while (N >= M)
+            {
+                N -= M;
+                counter++;
+                if (N == (firstN - N))
+                {
+                    N = firstN / 2;
+                    N /= Y;
+                }
+            }
+            Console.WriteLine(N);
+            Console.WriteLine(counter);
+        }
+    }
+}
