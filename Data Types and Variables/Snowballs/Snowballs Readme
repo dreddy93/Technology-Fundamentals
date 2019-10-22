@@ -7,7 +7,7 @@ For each snowball you will receive 3 input lines:
 •	On the second line you will get the snowballTime – an integer.
 •	On the third line you will get the snowballQuality – an integer.
 For each snowball you must calculate its snowballValue by the following formula:
-(snowballSnow / snowballTime) ^ snowballQuality
+(snowballSnow / snowballTim)  ^ snowballQuality
 At the end you must print the highest calculated snowballValue.
 Input
 •	On the first input line you will receive N – the number of snowballs.
