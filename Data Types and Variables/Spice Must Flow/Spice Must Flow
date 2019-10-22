@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int startingYield = int.Parse(Console.ReadLine());
+            int day = 0;
+            int extrakt = 0;
+            while (startingYield >= 100)
+            {
+                day++;
+                extrakt += startingYield - 26;
+                startingYield -= 10;
+            }
+            if (100 > startingYield && extrakt >= 26)
+            {
+                extrakt -= 26;
+            }
+            Console.WriteLine(day);
+            Console.WriteLine(extrakt);
+        }
+    }
+}
