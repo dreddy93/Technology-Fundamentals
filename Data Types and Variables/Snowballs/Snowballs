@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numberOfBalls = double.Parse(Console.ReadLine());
+            double snow = 0;
+            double time = 0;
+            double quality = 0;
+            double value = 0;
+
+            double bestSnow = 0;
+            double bestTime = 0;
+            double bestQuality = 0;
+            double bestValue = 0;
+
+            for (int i = 0; i < numberOfBalls; i++)
+            {
+                snow = double.Parse(Console.ReadLine());
+                time = double.Parse(Console.ReadLine());
+                quality = double.Parse(Console.ReadLine());
+                value = Math.Pow((snow / time), quality);
+                if (bestValue < value)
+                {
+                    bestSnow = snow;
+                    bestTime = time;
+                    bestQuality = quality;
+                    bestValue = value;
+                }
+            }
+            Console.WriteLine($"{bestSnow} : {bestTime} = {bestValue} ({bestQuality})");
+        }
+    }
+}
