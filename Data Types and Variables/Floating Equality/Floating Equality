@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._2_P03_Floating_Equality
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numberA = double.Parse(Console.ReadLine());
+            double numberB = double.Parse(Console.ReadLine());
+
+            double sum = Math.Abs(numberA - numberB);
+            if (sum > 0.000001)
+            {
+                Console.WriteLine(false);
+            }
+            else
+            {
+                Console.WriteLine(true);
+            }
+        }
+    }
+}
