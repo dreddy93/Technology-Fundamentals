@@ -17,3 +17,12 @@ for (int takoa = 2; takoa <= ___Do___; takoa++)
    }
 Console.WriteLine("{0} -> {1}", takoa, takovalie);
 }
+
+
+Examples
+Input	      Output
+5	
+            2 -> true
+            3 -> true
+            4 -> false
+            5 -> true
