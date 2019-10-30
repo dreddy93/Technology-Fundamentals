@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._2_P06_Balanced_Brackets
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lines = int.Parse(Console.ReadLine());
+
+            int openBrack = 0;
+            int closebrack = 0;
+            for (int i = 0; i < lines; i++)
+            {
+                string input = Console.ReadLine();
+                if (input == "(")
+                {
+                    openBrack++;
+                }
+                else if (input == ")")
+                {
+                    closebrack++;
+                }
+            }
+            if (openBrack == closebrack)
+            {
+                Console.WriteLine("BALANCED");
+            }
+            else 
+            {
+                Console.WriteLine("UNBALANCED");
+            }
+        }
+    }
+}
