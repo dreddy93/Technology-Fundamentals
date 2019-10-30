@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blanck_Project
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int key = int.Parse(Console.ReadLine());
+            int lines = int.Parse(Console.ReadLine());
+            string word = string.Empty;
+            for (int i = 0; i < lines; i++)
+            {
+                char ch = char.Parse(Console.ReadLine());
+                ch += (char)key;
+                word += ch;
+            }
+            Console.WriteLine(word);
+        }
+    }
+}
