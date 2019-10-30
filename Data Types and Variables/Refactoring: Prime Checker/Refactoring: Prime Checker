@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2._2_P04_Refactoring_Prime_Checker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 2; i <= number; i++)
+            {
+                string prime = "true";
+                for (int y = 2; y < i; y++)
+                {
+                    if (i % y == 0)
+                    {
+                        prime = "false";
+                        break;
+                    }
+                }
+                Console.WriteLine($"{i} -> {prime}");
+            }
+        }
+    }
+}
