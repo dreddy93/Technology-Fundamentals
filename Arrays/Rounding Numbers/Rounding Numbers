@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3_P00
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] numbers = Console.ReadLine().Split().Select(double.Parse).ToArray();
+            double[] roundedNumbers = numbers;
+            for (int i = 0; i <= numbers.Length - 1; i++)
+            {
+                Console.WriteLine($"{numbers[i]} => {Math.Round(roundedNumbers[i], MidpointRounding.AwayFromZero)}");
+            }
+        }
+    }
+}
